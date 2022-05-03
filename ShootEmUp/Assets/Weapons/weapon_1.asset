@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc9815e9aeeba94e9a9f1a632a8e81a, type: 3}
   m_Name: weapon_1
   m_EditorClassIdentifier: 
-  ammo: {fileID: 8070500380927174916, guid: 7226289392f43a945b23e038497e6525, type: 3}
+  ammo: {fileID: 8070500380927174916, guid: 4d7aed8629d41b448b9c3ecedfed01aa, type: 3}
   projectile_speed: 20
   damage: 10
   rpm: 600
