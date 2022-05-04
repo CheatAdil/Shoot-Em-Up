@@ -39,7 +39,7 @@ public class slider : MonoBehaviour
     }
     private void updSlider() 
     {
-        pointer.transform.localPosition = new Vector2(slider_pos, 0);
+        pointer.transform.localPosition = new Vector3(slider_pos, 0f, -1f);
         slider_setting = calculateSliderSetting();
     }
     public float GetSliderSetting() 
