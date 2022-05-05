@@ -304,6 +304,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: sprites_1_9
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 70
+        width: 13
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c10f474daf1126a41b35a4b22c440c6e
+      internalID: 983902497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -317,6 +338,7 @@ TextureImporter:
     nameFileIdTable:
       sprites_1_1: 780963000
       sprites_1_7: 1332383917
+      sprites_1_9: 983902497
       sprites_1_2: -45615571
       sprites_1_8: -2131430865
       sprites_1_5: -1551435275
