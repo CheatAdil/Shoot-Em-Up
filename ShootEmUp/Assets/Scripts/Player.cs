@@ -76,7 +76,6 @@ public class Player : MonoBehaviour
                         pos -= RangeIncr;
                     }
                     break;
-                    break;
                 }
         }
        canShoot = false;
@@ -86,5 +85,9 @@ public class Player : MonoBehaviour
         current_package = package;
         max_hp = default_max_hp * package.setting;
         speed = (1f / (0.0014f *( package.setting * 100f + 47f)) + 1f);
+    }
+    public float GetSpeed() 
+    {
+        return speed;
     }
 }

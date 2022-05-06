@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class slider : MonoBehaviour
 {
-    [SerializeField] private GameObject Player;
+    [SerializeField] private Player Player;
     [SerializeField] private float slider_setting;
     [SerializeField] private float min_slider_setting;
     [SerializeField] private float slider_pos;
@@ -14,7 +15,7 @@ public class slider : MonoBehaviour
     [SerializeField] private GameObject pointer;
     [SerializeField] private GameObject limMin, limMax;
     [SerializeField] private GameObject fill;
-    [SerializeField] private GameObject text;
+    [SerializeField] private TextMeshPro text;
     [SerializeField] private GameObject[] markers;
     [SerializeField] private float[] markers_borders;
     [SerializeField] private Color[] colors;
@@ -29,6 +30,8 @@ public class slider : MonoBehaviour
     private SpriteRenderer min_sr;
     private SpriteRenderer max_sr;
     private float slider_act_min;
+
+    private float maxSpeedPlayer;
     private void Start()
     {
         slider_pos = slider_min_max.y;
@@ -50,6 +53,7 @@ public class slider : MonoBehaviour
         fill_sr = fill.GetComponent<SpriteRenderer>();
         max_sr = limMax.GetComponent<SpriteRenderer>();
         min_sr = limMin.GetComponent<SpriteRenderer>();
+        maxSpeedPlayer = Player.GetSpeed();
         updSlider();
     }
     private void Update()
@@ -93,7 +97,8 @@ public class slider : MonoBehaviour
             colorInd = 0;
         }
         Player.SendMessage("RecieveSliderUpdate", new SliderPackage(slider_setting, current_mode));
-        text.GetComponent<Text>().text =($"shields: {(slider_setting * 100f).ToString("F1")} %");
+        text.text =($"shields: {(slider_setting * 100f).ToString("F1")} %\n" +
+            $"thrust: {(Player.GetSpeed()/maxSpeedPlayer * 100f).ToString("F1")} %");
     }
     public float GetSliderSetting() 
     {
