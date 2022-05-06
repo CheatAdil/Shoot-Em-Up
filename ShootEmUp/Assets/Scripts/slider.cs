@@ -99,6 +99,7 @@ public class slider : MonoBehaviour
         Player.SendMessage("RecieveSliderUpdate", new SliderPackage(slider_setting, current_mode));
         text.text =($"shields: {(slider_setting * 100f).ToString("F1")} %\n" +
             $"thrust: {(Player.GetSpeed()/maxSpeedPlayer * 100f).ToString("F1")} %");
+        text.color = (Player.AtMaxHealth() ? new Color(1f, 1f, 1f, 1f) : new Color(1f, 0f, 0f, 1f));
     }
     public float GetSliderSetting() 
     {

@@ -295,6 +295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee666e89580777741920188ce9128eb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  max_hp: 0
+  HP: 200
+  gibs: {fileID: 0}
   speed: 5.859
   weapon:
   - {fileID: 11400000, guid: f6ae6e8c232a3ca46a3daebd70b2eb62, type: 2}
@@ -302,8 +305,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a203bbc3924ce114a87f41fa9a9c53f5, type: 2}
   velocity: {x: 0, y: 0, z: 0}
   default_max_hp: 200
-  max_hp: 0
-  HP: 0
 --- !u!212 &309295476
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -345,8 +346,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 00a5c44255044354abca52c391309cb2, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -365,8 +366,8 @@ Transform:
   m_GameObject: {fileID: 309295474}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.79, y: 0.06568542, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 778498804}
   m_Father: {fileID: 0}

@@ -2,12 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : Entity
 {
-    [SerializeField] private float speed;
     [SerializeField] private Weapon[] weapon;
     private SliderPackage current_package;
-    public Vector3 velocity;
     Vector3 control;
     Vector3 prevPos;
     
@@ -15,8 +13,7 @@ public class Player : MonoBehaviour
     private bool canShoot = true;
 
     [SerializeField] private float default_max_hp;
-    [SerializeField] private float max_hp;
-    [SerializeField] private float HP;
+    
     private void Update()
     {
         prevPos = transform.position;
@@ -83,11 +80,21 @@ public class Player : MonoBehaviour
     private void RecieveSliderUpdate(SliderPackage package)
     {
         current_package = package;
-        max_hp = default_max_hp * package.setting;
+        max_hp = NewMaxHP(package.setting);
         speed = (1f / (0.0014f *( package.setting * 100f + 47f)) + 1f);
+    }
+    private float NewMaxHP(float modifier)
+	{
+        float newMaxHP = default_max_hp * modifier;
+        if (HP > newMaxHP) HP = newMaxHP;
+        return newMaxHP;
     }
     public float GetSpeed() 
     {
         return speed;
     }
+    public bool AtMaxHealth()
+	{
+        return (HP == max_hp);
+	}
 }
