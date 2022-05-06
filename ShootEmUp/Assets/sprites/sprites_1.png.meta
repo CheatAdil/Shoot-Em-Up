@@ -123,8 +123,8 @@ TextureImporter:
         y: 87
         width: 2
         height: 7
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -313,7 +313,7 @@ TextureImporter:
         width: 13
         height: 13
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -321,6 +321,69 @@ TextureImporter:
       bones: []
       spriteID: c10f474daf1126a41b35a4b22c440c6e
       internalID: 983902497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: White box
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 87
+        width: 1
+        height: 1
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cecaf804392c7e248aa60e6c0b4c8099
+      internalID: 701091903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_1_10
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 87
+        width: 1
+        height: 1
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30656e9a377e70446b7616e35eeba85b
+      internalID: -405702609
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprites_1_11
+      rect:
+        serializedVersion: 2
+        x: 26
+        y: 86
+        width: 149
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ef66b7a6c547b748900312846216f4d
+      internalID: -790450903
       vertices: []
       indices: 
       edges: []
@@ -340,12 +403,15 @@ TextureImporter:
       sprites_1_7: 1332383917
       sprites_1_9: 983902497
       sprites_1_2: -45615571
+      White box: 701091903
       sprites_1_8: -2131430865
       sprites_1_5: -1551435275
+      sprites_1_11: -790450903
       sprites_1_0: -1848230650
       sprites_1_3: 1468757343
       sprites_1_6: 785401354
       sprites_1_4: 2059686562
+      sprites_1_10: -405702609
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

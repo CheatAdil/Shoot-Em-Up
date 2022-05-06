@@ -48,7 +48,7 @@ public class slider : MonoBehaviour
         fill.transform.localPosition = new Vector3(limMin.transform.GetChild(0).position.x, 0,0);
         fill.transform.localPosition += new Vector3(f_dist / 2f, 0, 0);
         float scale = f_dist * fill.GetComponent<SpriteRenderer>().size.x;
-        fill.GetComponent<SpriteRenderer>().size =  new Vector2(scale * 2.015f, fill.GetComponent<SpriteRenderer>().size.y);
+        fill.GetComponent<SpriteRenderer>().size =  new Vector2(scale * 2.000f, fill.GetComponent<SpriteRenderer>().size.y);
         // end
         fill_sr = fill.GetComponent<SpriteRenderer>();
         max_sr = limMax.GetComponent<SpriteRenderer>();
