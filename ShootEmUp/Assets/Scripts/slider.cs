@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public class Slider : MonoBehaviour
+public class slider : MonoBehaviour
 {
     [SerializeField] private Player Player;
     private float maxSpeedPlayer;
