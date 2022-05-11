@@ -87,7 +87,6 @@ public class Player : Entity
 	{
         float newMaxHP = default_max_hp * modifier;
         if (HP > newMaxHP) HP = newMaxHP;
-        else if (HP / newMaxHP >= 0.9) HP = newMaxHP;
         return newMaxHP;
     }
     public float GetSpeed() 

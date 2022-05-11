@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class health : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float LifeTime;
+    [SerializeField] private float amount;
+    private float timer;
 
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+        ////
+    }
+    private void Update()
+    {
+        timer += Time.deltaTime;
+        if (timer >= LifeTime) Destroy(this.gameObject);
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            Destroy(this.gameObject);
+            ////
+        }
     }
 }
