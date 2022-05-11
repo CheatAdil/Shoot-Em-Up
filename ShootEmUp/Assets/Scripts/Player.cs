@@ -97,4 +97,12 @@ public class Player : Entity
 	{
         return (HP == max_hp);
 	}
+    public float MaxHealthPercentage()
+	{
+        return max_hp / default_max_hp;
+	}
+    public float CurrentHealthPercentage()
+	{
+        return HP / default_max_hp;
+	}
 }

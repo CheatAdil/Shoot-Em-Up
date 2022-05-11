@@ -321,4 +321,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LifeTime: 4
-  amount: 0
+  amount: 20

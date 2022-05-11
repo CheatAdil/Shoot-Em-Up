@@ -16,7 +16,7 @@ public class slider : MonoBehaviour
     [SerializeField] private GameObject[] markers;
     [SerializeField] private GameObject handle;
 
-    private float slider_pos;
+    [SerializeField] private float slider_pos;
     private float slider_zero_position = -68;
 
     private WeaponMode current_mode;
@@ -76,9 +76,12 @@ public class slider : MonoBehaviour
 
         //
         Player.SendMessage("RecieveSliderUpdate", new SliderPackage(slider_pos, current_mode));
-        stat_text.text = ($"shields: {(slider_pos * 100f).ToString("F1")} %\n" +
-            $"thrust: {(Player.GetSpeed() / maxSpeedPlayer * 100f).ToString("F1")} %");
-        stat_text.color = (Player.AtMaxHealth() ? new Color(1f, 1f, 1f, 1f) : new Color(1f, 0f, 0f, 1f));
+        if (stat_text != null)
+        {
+            stat_text.text = ($"shields: {(slider_pos * 100f).ToString("F1")} %\n" +
+                $"thrust: {(Player.GetSpeed() / maxSpeedPlayer * 100f).ToString("F1")} %");
+            stat_text.color = (Player.AtMaxHealth() ? new Color(1f, 1f, 1f, 1f) : new Color(1f, 0f, 0f, 1f));
+        }
         //
     }
     private float XPosition(float percentage) //Returns x position of where to put slider handle

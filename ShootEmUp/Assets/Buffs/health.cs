@@ -21,8 +21,8 @@ public class health : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            collision.SendMessage("GetHurt", -amount);
             Destroy(this.gameObject);
-            ////
         }
     }
 }

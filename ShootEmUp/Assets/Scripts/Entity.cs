@@ -13,6 +13,7 @@ public class Entity : MonoBehaviour
 	{
         HP -= damage;
         if (HP <= 0) Die();
+        if (HP > max_hp) HP = max_hp;
 	}
     protected void Die()
 	{
