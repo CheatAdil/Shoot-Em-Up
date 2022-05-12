@@ -9,14 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2dc9815e9aeeba94e9a9f1a632a8e81a, type: 3}
+  m_Script: {fileID: 11500000, guid: 1b641839c57206c45ad3f08929b32adb, type: 3}
   m_Name: weapon_1
   m_EditorClassIdentifier: 
-  ammo: {fileID: 8070500380927174916, guid: 4d7aed8629d41b448b9c3ecedfed01aa, type: 3}
-  projectile_speed: 14
-  damage: 10
-  rpm: 300
-  type: 0
-  projectile_num: 0
-  angle: 0
-  range: 0
+  weapons:
+  - {fileID: 11400000, guid: f6ae6e8c232a3ca46a3daebd70b2eb62, type: 2}
+  - {fileID: 11400000, guid: 19b0ef1471f986e45bb047ea81261360, type: 2}
+  - {fileID: 11400000, guid: a203bbc3924ce114a87f41fa9a9c53f5, type: 2}

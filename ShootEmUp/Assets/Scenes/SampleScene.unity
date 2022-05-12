@@ -454,10 +454,7 @@ MonoBehaviour:
   max_hp: 0
   HP: 200
   gibs: {fileID: 0}
-  weapon:
-  - {fileID: 11400000, guid: f6ae6e8c232a3ca46a3daebd70b2eb62, type: 2}
-  - {fileID: 11400000, guid: 19b0ef1471f986e45bb047ea81261360, type: 2}
-  - {fileID: 11400000, guid: a203bbc3924ce114a87f41fa9a9c53f5, type: 2}
+  weapon: {fileID: 11400000, guid: 716c6f7b6885bd94e85d8c64e18eec4e, type: 2}
   default_max_hp: 100
 --- !u!212 &309295476
 SpriteRenderer:
@@ -1788,6 +1785,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1667754529588130385, guid: 4c9dcc09cebf31d42bb73b0dc3cae71a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1667754530634758998, guid: 4c9dcc09cebf31d42bb73b0dc3cae71a, type: 3}
       propertyPath: m_RootOrder
       value: 3

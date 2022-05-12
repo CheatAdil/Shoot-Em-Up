@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Player : Entity
 {
-    [SerializeField] private Weapon[] weapon;
+    [SerializeField] private Weapon weapon;
     private SliderPackage current_package;
     Vector3 control;
     Vector3 prevPos;
@@ -23,7 +23,7 @@ public class Player : Entity
         if (!canShoot)
         {
             timer += Time.deltaTime;
-            if (timer > (60f/ weapon[((int)current_package.mode)].rpm))
+            if (timer > (60f/ weapon.GetWeapons()[((int)current_package.mode)].rpm))
             {
                 timer = 0;
                 canShoot = true;
@@ -36,40 +36,40 @@ public class Player : Entity
     }
     private void Shoot()
     {
-        switch (weapon[((int)current_package.mode)].type)
+        switch (weapon.GetWeapons()[((int)current_package.mode)].type)
         {
             case WeaponType.single:
                 {
-                    if (weapon[((int)current_package.mode)] == null) return;
-                    GameObject b = Instantiate(weapon[((int)current_package.mode)].ammo, transform.GetChild(0).position, Quaternion.identity);
+                    if (weapon.GetWeapons()[((int)current_package.mode)] == null) return;
+                    GameObject b = Instantiate(weapon.GetWeapons()[((int)current_package.mode)].ammo, transform.GetChild(0).position, Quaternion.identity);
                     ammo a = b.AddComponent<ammo>();
-                    a.setup(weapon[((int)current_package.mode)].damage, weapon[((int)current_package.mode)].projectile_speed, new Vector3(1,0,0));
+                    a.setup(weapon.GetWeapons()[((int)current_package.mode)].damage, weapon.GetWeapons()[((int)current_package.mode)].projectile_speed, new Vector3(1,0,0));
                     break;
                 }
             case WeaponType.spread: 
                 {
-                    if (weapon[((int)current_package.mode)] == null) return;
-                    float angIncr = weapon[((int)current_package.mode)].angle / weapon[((int)current_package.mode)].projectile_num;
-                    float ang = weapon[((int)current_package.mode)].angle / 2f;
-                    for (int i = 0; i < weapon[((int)current_package.mode)].projectile_num; i++) 
+                    if (weapon.GetWeapons()[((int)current_package.mode)] == null) return;
+                    float angIncr = weapon.GetWeapons()[((int)current_package.mode)].angle / weapon.GetWeapons()[((int)current_package.mode)].projectile_num;
+                    float ang = weapon.GetWeapons()[((int)current_package.mode)].angle / 2f;
+                    for (int i = 0; i < weapon.GetWeapons()[((int)current_package.mode)].projectile_num; i++) 
                     {
-                        GameObject b = Instantiate(weapon[((int)current_package.mode)].ammo, transform.GetChild(0).position, Quaternion.identity);
+                        GameObject b = Instantiate(weapon.GetWeapons()[((int)current_package.mode)].ammo, transform.GetChild(0).position, Quaternion.identity);
                         ammo a = b.AddComponent<ammo>();
-                        a.setup(weapon[((int)current_package.mode)].damage, weapon[((int)current_package.mode)].projectile_speed, new Vector3(Mathf.Cos(Mathf.Deg2Rad * ang), Mathf.Sin(Mathf.Deg2Rad * ang), 0));
+                        a.setup(weapon.GetWeapons()[((int)current_package.mode)].damage, weapon.GetWeapons()[((int)current_package.mode)].projectile_speed, new Vector3(Mathf.Cos(Mathf.Deg2Rad * ang), Mathf.Sin(Mathf.Deg2Rad * ang), 0));
                         ang -= angIncr;
                     }
                     break;
                 }
             case WeaponType.mult:
                 {
-                    if (weapon[((int)current_package.mode)] == null) return;
-                    float RangeIncr = weapon[((int)current_package.mode)].range * 2f / weapon[((int)current_package.mode)].projectile_num;
-                    float pos = weapon[((int)current_package.mode)].range / 2f;
-                    for (int i = 0; i < weapon[((int)current_package.mode)].projectile_num; i++)
+                    if (weapon.GetWeapons()[((int)current_package.mode)] == null) return;
+                    float RangeIncr = weapon.GetWeapons()[((int)current_package.mode)].range * 2f / weapon.GetWeapons()[((int)current_package.mode)].projectile_num;
+                    float pos = weapon.GetWeapons()[((int)current_package.mode)].range / 2f;
+                    for (int i = 0; i < weapon.GetWeapons()[((int)current_package.mode)].projectile_num; i++)
                     {
-                        GameObject b = Instantiate(weapon[((int)current_package.mode)].ammo, transform.GetChild(0).position + new Vector3(0 ,pos ,0 ), Quaternion.identity);
+                        GameObject b = Instantiate(weapon.GetWeapons()[((int)current_package.mode)].ammo, transform.GetChild(0).position + new Vector3(0 ,pos ,0 ), Quaternion.identity);
                         ammo a = b.AddComponent<ammo>();
-                        a.setup(weapon[((int)current_package.mode)].damage, weapon[((int)current_package.mode)].projectile_speed, new Vector3(1,0,0));
+                        a.setup(weapon.GetWeapons()[((int)current_package.mode)].damage, weapon.GetWeapons()[((int)current_package.mode)].projectile_speed, new Vector3(1,0,0));
                         pos -= RangeIncr;
                     }
                     break;
