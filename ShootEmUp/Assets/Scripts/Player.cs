@@ -5,13 +5,17 @@ using UnityEngine;
 public class Player : Entity
 {
     [SerializeField] private Weapon weapon;
+
+
+
+
+
+
     private SliderPackage current_package;
-    Vector3 control;
-    Vector3 prevPos;
-    
+    private Vector3 control;
+    private Vector3 prevPos;
     private float timer;
     private bool canShoot = true;
-
     [SerializeField] private float default_max_hp;
     
     private void Update()
@@ -81,13 +85,17 @@ public class Player : Entity
     {
         current_package = package;
         max_hp = NewMaxHP(package.setting);
-        speed = (1f / (0.0014f *( package.setting * 100f + 47f)) + 1f);
+        speed = NewSpeed(package.setting);
     }
     private float NewMaxHP(float modifier)
 	{
         float newMaxHP = default_max_hp * modifier;
         if (HP > newMaxHP) HP = newMaxHP;
         return newMaxHP;
+    }
+    private float NewSpeed(float setting) 
+    {
+        return ((1f / (0.0014f * (setting * 100f + 47f)) + 1f) * b_speed);
     }
     public float GetSpeed() 
     {
@@ -105,4 +113,15 @@ public class Player : Entity
 	{
         return HP / default_max_hp;
 	}
+
+
+    #region buffs
+    [SerializeField] private float b_speed = 1f;
+    private void SetBuff_speed(float v) 
+    {
+        b_speed = v;
+        speed = NewSpeed(current_package.setting);
+    }
+    #endregion
+
 }
